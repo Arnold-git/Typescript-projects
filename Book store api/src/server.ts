@@ -25,5 +25,12 @@ router.use((req, res, next) => {
 });
 
 router.use((req, res, next) =>{
-    res.header('Acess')
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Header', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+
+    if (req.method == 'OPTIONS')
+    {
+        res.header('Access-Control-Allow-Methods', 'GET PATCH DELETE POST PUT');
+        return res.status(200).json({});
+    }
 })
