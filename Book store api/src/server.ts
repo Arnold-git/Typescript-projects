@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import logging from './config/logging';
 import configfrom from './config/config';
+import { config } from 'dotenv';
 
 const NAMESPACE = 'Server';
 const router = express();
@@ -38,5 +39,11 @@ router.use((req, res, next) =>{
 router.use((req, res, next) => {
     const error = new Error('not found');
 
-    return res.status(404).json()
-})
+    return res.status(404).json({
+        message: error.message 
+    });
+});
+
+
+const httpServer = http.createServer(router);
+httpServer.listen(config.server.port, () )
