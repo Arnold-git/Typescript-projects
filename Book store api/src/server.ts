@@ -23,6 +23,8 @@ router.use((req, res, next) => {
             socket.remoteAddress}], STATUS - [${res.statusCode}]`);
 
     })
+
+    next();
 });
 
 router.use((req, res, next) =>{
@@ -34,6 +36,8 @@ router.use((req, res, next) =>{
         res.header('Access-Control-Allow-Methods', 'GET PATCH DELETE POST PUT');
         return res.status(200).json({});
     }
+
+    next();
 });
 
 router.use((req, res, next) => {
