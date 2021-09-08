@@ -12,4 +12,4 @@ const sampleHealthCheck = (req: Request, res: Response, next: NextFunction) => {
 
 }
 
-export { sampleHealthCheck }
+export default { sampleHealthCheck }
