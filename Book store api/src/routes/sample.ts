@@ -1,7 +1,11 @@
 import express from 'express';
-import controller from '..controller/sample';
+import controller from '../controller/sample';
 
 
-const router = export.Router();
+const router = express.Router();
 
-router.get('/ping', controller)
+
+router.get('/ping', controller.sampleHealthCheck)
+
+
+export = router;
