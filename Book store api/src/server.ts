@@ -2,8 +2,8 @@ import http from 'http';
 import express from 'express';
 import bodyParser from 'body-parser';
 import logging from './config/logging';
-import configfrom from './config/config';
-import { config } from 'dotenv';
+import config from './config/config';
+
 
 const NAMESPACE = 'Server';
 const router = express();
